@@ -1,0 +1,172 @@
+body {
+  margin: 0 auto;
+  background: #344;
+}
+
+.centralize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.singup {
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  font-weight: bold;
+  font-size: x-large;
+  margin-top: 1.5em;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65vh;
+  width: 48vh;
+  flex-direction: column;
+  gap: 5vh;
+  border-radius: 15px;
+  background: #f6f6c4;
+  box-shadow: 8px 8px 8px #777;
+  border-radius: 8px;
+}
+
+.inputBox {
+  position: relative;
+  width: 35vh;
+  padding-right: 2vh;
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 8px;
+  padding-bottom: 2vh;
+}
+
+.inputBox span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY(-4px);
+  margin-left: 10px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 3px;
+  border-radius: 8px;
+}
+
+.inputBox input:valid~span,
+.inputBox input:focus~span {
+  transform: translateX(200px) translateY(-58px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #000;
+  letter-spacing: 0.2em;
+  color: #fff;
+  border: 2px;
+}
+
+.inputBox input:valid,
+.inputBox input:focus {
+  border: 2px solid #000;
+  border-radius: 8px;
+}
+
+.confimar_senha {
+  position: relative;
+  width: 35vh;
+  padding-right: 2vh;
+}
+
+.confimar_senha input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 8px;
+  padding-bottom: 2vh;
+}
+
+.confimar_senha span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY(-4px);
+  margin-left: 10px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 3px;
+  border-radius: 8px;
+}
+
+.confimar_senha input:valid~span,
+.confimar_senha input:focus~span {
+  transform: translateX(95px) translateY(-60px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #000;
+  letter-spacing: 0.2em;
+  color: #fff;
+  border: 2px;
+}
+
+.confimar_senha input:valid,
+.confimar_senha input:focus {
+  border: 2px solid #000;
+  border-radius: 8px;
+}
+
+.link {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  flex-direction: column-reverse
+}
+
+.enter {
+  margin: 2vh;
+  height: 5vh;
+  width: 20vh;
+  border-radius: 5px;
+  border: 2px solid #000;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  transition: 0.5s;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 3em;
+}
+
+.enter:hover {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
