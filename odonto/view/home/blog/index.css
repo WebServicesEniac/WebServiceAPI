@@ -1,154 +1,59 @@
-* {
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Garante que padding e border sejam incluídos no cálculo da largura/altura */
-}
-
-body {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 13px;
-    overflow-x: hidden; /* Remove a barra de rolagem horizontal */
-    background-color: #f4f4f4; /* Adiciona um fundo suave para melhorar o contraste */
-}
-
-.menu {
-    list-style: none;
-    border: 1px solid #c0c0c0;
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    min-height: 100vh; 
 }
-
-.menu li {
-    position: relative;
-    flex: 1; /* Torna os itens do menu flexíveis e iguais em tamanho */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.menu a {
-    text-decoration: none;
-    color: #111;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-.menu li ul {
-    position: absolute;
-    top: 100%; /* Assegura que o submenu comece exatamente após o item do menu */
-    left: 0;
-    background-color: #fff;
-    display: none;
-    width: 100%; /* Faz com que a largura do submenu corresponda à do item do menu */
-}
-
-.menu li ul li {
-    border-top: 1px solid #c0c0c0; /* Melhora a visibilidade entre itens do submenu */
-    display: block; /* Altera para block para uma melhor visualização dos subitens */
-}
-
-.menu li a:hover, .menu li a:focus {
-    background: #333;
-    color: #fff;
-}
-
-.menu li:hover ul, .menu li.over ul {
-    display: block;
-}
-
-main, aside {
-    width: 40%;
-    float: left;
-    padding: 20px;
-    background-color: #fff;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-main {
-    width: 40%;
-    float: left;
-    padding: 20px;
-    background-color: #fff;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    color: #007bff;
-}
-
-p {
-    color: #555;
-    line-height: 1.5;
-}
-
-label {
-    display: block;
-    margin-top: 10px;
-    color: #333;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-.button {
+  
+header {
     background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.button:hover {
-    background-color: rgb(7, 88, 174)
-}
-
-section {
-    clear: both;
+    color: white;
     padding: 20px;
-}
-
-footer {
-    background-color: #007bff;
-    color: #ffffff;
     text-align: center;
-    padding: 20px;
-    font-size: 14px;
-    border-radius: 20px 20px 0 0;
+}
+  
+nav ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-footer a {
-    color: #ffffff;
-    margin: 0 10px;
-    transition: color 0.3s ease;
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+  
+nav ul li a {
+    color: white;
     text-decoration: none;
 }
-
-footer a:hover {
-    color: #ffffff;
+  
+.container {
+    display: flex;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
-
-.footer-content p {
-    margin: 10px 0;
-    color: #ffffff;
+  
+.post {
+    margin-bottom: 20px;
+  }
+  
+  .post h2 {
+    text-align: center;
+  }
+  
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
 }
-
-.footer-content img {
-    vertical-align: middle;
-    margin: 0 5px;
-}
+  

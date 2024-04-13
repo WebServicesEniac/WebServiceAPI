@@ -4,57 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../planos/index.css">
-    <title>Document</title>
+    <link rel="icon" type="image/png" href="../../../assets/img/logo_odonto.png">
+    <title>Planos</title>
 </head>
 <body>
     <header>
-        <h1><img src="../../../assets/img/nome_logo_odonto.jpg" alt="logo"></h1>
+        <nav>
+            <ul>
+                <li><a href="../home/index.html">Home</a></li>
+                <li><a href="../home/parceiros/index.html">Parceiros</a></li>
+                <li><a href="../home/blog/index.html">Blog</a></li>
+                <li><a href="../home/sobre_nos/index.html">Sobre Nós</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-        </ul>
-    </nav>
-    <div class="container">
-        <aside>
-            <a href="#" class="button">Botão Esquerdo</a>
-            <img src="imagem.jpg" alt="Imagem" class="aside-image">
-            <a href="#" class="button">Botão Direito</a>
-        </aside>
-        <main>
-            <h2>Botões Principais</h2>
-            <a href="#" class="button">Botão 1</a>
-            <a href="#" class="button">Botão 2</a>
-            <a href="#" class="button">Botão 3</a>
-            <a href="#" class="button">Botão 4</a>
-            <a href="#" class="button">Botão 5</a>
-            <a href="#" class="button">Botão 6</a>
-            <a href="#" class="button">Botão 7</a>
-            <a href="#" class="button">Botão 8</a>
-            <a href="#" class="button">Botão 9</a>
-            <a href="#" class="button">Botão 10</a>
-            <h2>Carrossel</h2>
-            <div class="carousel">
-                <div class="carousel-card">
-                    <h3>Card 1</h3>
-                    <p>Conteúdo do Card 1</p>
-                </div>
-                <div class="carousel-card">
-                    <h3>Card 2</h3>
-                    <p>Conteúdo do Card 2</p>
-                </div>
-                <div class="carousel-card">
-                    <h3>Card 3</h3>
-                    <p>Conteúdo do Card 3</p>
-                </div>
-            </div>
-        </main>
+    <div class="content">
+        <section class="content-block">
+            <h2>Odonto atingiu 1 milhão de vidas!</h2>
+            <p>Ajude a prevenir as tentativas de fraudes contra seu plano odontológico. Clique no banner e saiba mais!</p>
+            <button>Já sou cliente</button>
+            <button>Quero contratar</button>
+        </section>
+        
+        <section class="content-block">
+            <a href="../planos/index.html">
+                <img src="../../../assets/img/fraude.jpg" alt="Imagem teste" class="img-content">
+            </a>
+        </section>
     </div>
+    
+    <div class="buttons">
+
+        <button>Botão 1</button>
+        <button>Botão 2</button>
+        <button>Botão 3</button>
+        <button>Botão 4</button>
+        <button>Botão 5</button>
+        <button>Botão 6</button>
+        <button>Botão 7</button>
+        <button>Botão 8</button>
+
+    </div>
+    <section class="form-block">
+      <h2>Formulário de Contato</h2>
+      <form action="#" method="post">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  
     <footer>
-        &copy; 2024 Sua Empresa - Todos os direitos reservados.
+      <p>&copy; 2024 Clínica Odontológica. Todos os direitos reservados.</p>
     </footer>
-</body>
+  </body>
 </html>
 </html>

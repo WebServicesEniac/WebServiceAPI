@@ -69,24 +69,28 @@ main {
 
 .consultation-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 20px; /* Espaço entre os cartões */
-    padding: 20px; /* Espaçamento ao redor da grade */
-    justify-content: center; /* Centraliza os cartões na grade quando eles não ocupam toda a largura */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    justify-content: center;
 }
 
 .alinhamento {
     padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .card {
-    background-color: #ffffff;
+    background-color: #ffd7ff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
     display: flex;
-    flex-direction: column; /* Organiza o conteúdo do cartão em uma coluna */
-    justify-content: space-between; /* Distribui o espaço dentro do cartão */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; /* Centralize o conteúdo horizontalmente */
 }
 
 .patient-name {
@@ -106,19 +110,18 @@ main {
     background-color: #007bff;
     color: #ffffff;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    align-self: center; /* Centraliza o botão no cartão */
-    width: 80%; /* Define uma largura máxima para o botão, para não esticar demais em telas grandes */
+    width: 80%;
+    text-align: center;
+    margin: 10px auto; /* Ajuste a margem para centralizar verticalmente e adicione espaço entre o botão e o conteúdo */
 }
 
 .cancel-button:hover {
-    background-color: #0056b3; /* Um azul mais escuro para o hover */
+    background-color: #0056b3;
 }
-
-
 
 footer {
     background-color: #f0f0f0;

@@ -23,13 +23,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 65vh;
-  width: 48vh;
+  min-height: 60vh;
+  width: 45vh;
   flex-direction: column;
   gap: 5vh;
   border-radius: 15px;
-  background: #f6f6c4;
-  box-shadow: 8px 8px 8px #777;
+  background: #68b1ff;
+  box-shadow: 8px 8px 8px #7b53ff;
   border-radius: 8px;
 }
 
