@@ -8,24 +8,26 @@
     <link rel="icon" type="image/png" href="./assets/img/logo_odonto.webp">
 </head>
 <body class="centralize">
-    <div class="container">
-        <div class="card">
-            <a class="singup">Login</a>
-
-            <div class="inputBox">
-                <input type="text" required="required">
-                <span>E-mail</span>
+    <div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+			<div class="login">
+				<form class="form">
+					<label for="chk" aria-hidden="true">Log in</label>
+					<input class="input" type="email" name="email" placeholder="Email" required="">
+					<input class="input" type="password" name="pswd" placeholder="Password" required="">
+					<button>Log in</button>
+				</form>
+			</div>
+            <div class="register">
+                <form class="form">
+                    <label for="chk" aria-hidden="true">Register</label>
+                    <input class="input" type="text" name="txt" placeholder="Username" required="">
+                    <input class="input" type="email" name="email" placeholder="Email" required="">
+                    <input class="input" type="password" name="pswd" placeholder="Password" required="">
+                    <button>Register</button>
+                </form>
             </div>
-            <div class="inputBox">
-                <input type="password" required="required">
-                <span>Senha</span>
-            </div>
-            <div class="link">
-                <a href="./view/cadastro/index.html" class="cadastro" >Não tem conta? Cadastre-se</a>
-
-                <a href="./view/home/index.html"><button class="enter">Entrar</button></a>
-            </div>
-        </div>
-    </div>
+        </input>
+	</div>
 </body>
 </html>
