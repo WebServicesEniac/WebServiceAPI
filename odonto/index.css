@@ -25,7 +25,7 @@ body {
 .form {
   display: flex;
   gap: 5px;
-  padding: 10vh;
+  padding: 5vh;
   flex-wrap: wrap;
   align-content: space-around;
   align-items: center;
