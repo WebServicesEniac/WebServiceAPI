@@ -1,7 +1,63 @@
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;/
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 13px;
+    overflow-x: hidden;
+    background-color: #f4f4f4;
+}
+
+.menu {
+    list-style: none;
+    border: 1px solid #c0c0c0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+}
+
+.menu li {
+    position: relative;
+    flex: 1; /* Torna os itens do menu flexíveis e iguais em tamanho */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #111;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu li ul {
+    position: absolute;
+    top: 100%; /* Assegura que o submenu comece exatamente após o item do menu */
+    left: 0;
+    background-color: #fff;
+    display: none;
+    width: 100%; /* Faz com que a largura do submenu corresponda à do item do menu */
+}
+
+.menu li ul li {
+    border-top: 1px solid #c0c0c0; /* Melhora a visibilidade entre itens do submenu */
+    display: block; /* Altera para block para uma melhor visualização dos subitens */
+}
+
+.menu li a:hover, .menu li a:focus {
+    background: #333;
+    color: #fff;
+}
+
+.menu li:hover ul, .menu li.over ul {
+    display: block;
 }
 
 header {
