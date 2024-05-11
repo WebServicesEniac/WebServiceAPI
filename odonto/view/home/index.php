@@ -34,18 +34,18 @@
                 <h2>Gerenciamento de Consulta Odontológicas</h2>
                 <p>Com Dental Office suas dores nossas soluções!</p>
                 <p>Gestão financeira, agenda online, prontuário odontológico e mais em um software odontológico integrado e fácil de usar.</p>
-                <form id="consultaAgendamentos">
+                <form id="consultaAgendamentos" method="post" action="../Api/teste.php?acao=Consultar">
                     <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo">
+                    <input type="text" name="name" id="name" placeholder="Nome Completo" required="">
                     
                     <label for="email">E-mail</label>
-                    <input type="text" id="email" name="email" placeholder="Digite seu e-mail">
+                    <input type="email" name="email" id="email" placeholder="E-mail" required="">
                     
                     <label for="whatsapp">WhatsApp</label>
-                    <input type="text" id="whatsapp" name="whatsapp" placeholder="Digite seu WhatsApp">
+                    <input type="text" name="whatsapp" id="whatsapp" placeholder="Digite seu WhatsApp">
                     <br>
                     <br>
-                    <a href="../agendamento/index.html" class="button" type="submit">Consultar Agendamentos</a>
+                    <a href="" class="button" type="submit">Consultar Agendamentos</a>
                 </form>
             </main>
             <aside>
@@ -68,6 +68,29 @@
             <p>Contato: <a href="mailto:suporte@dentaloffice.com">suporte@dentaloffice.com</a></p>
         </div>
     </footer>
-    
+    <script>
+        document.getElementById("consultaAgendamentos").addEventListener("submit", function(event) {
+            event.preventDefault(); // Impede o envio do formulário padrão
+            // Obtém os valores dos campos de registro
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            
+            // Faz uma solicitação AJAX para a API de registro
+            fetch("../Api/teste.php?acao=Inserir", {
+                method: "POST",
+                body: new FormData(document.getElementById("consultaAgendamentos"))
+            }).then(response => response.json()).then(data => {
+                // Manipula os dados retornados pela API
+                console.log(data);
+                if (data.status === "success") {
+                    window.location.href = "../agendamento/index.html"; // Redireciona para a página de consulta
+                } else {
+                    alert(data.message); // Exibe mensagem de erro
+                }
+            }).catch(error => {
+                console.error('Erro ao fazer solicitação:', error);
+            });
+        });
+    </script>
 </body>
 </html>

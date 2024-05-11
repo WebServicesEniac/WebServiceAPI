@@ -2,7 +2,7 @@
 $host = 'localhost';
 $username = 'root'; 
 $password = ''; // Senha do banco de dados
-$dbname = 'smile_time';
+$dbname = 'test';
 
 $conn = new mysqli($host, $username, $password, $dbname);
 
