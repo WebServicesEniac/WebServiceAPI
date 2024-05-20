@@ -6,6 +6,7 @@
     <title>Odonto</title>
     <link rel="stylesheet" href="../home/index.css">
     <link rel="icon" type="image/png" href="../../assets/img/logo_odonto.png">
+    
 </head>
 <body>
     <nav>
@@ -34,18 +35,18 @@
                 <h2>Gerenciamento de Consulta Odontológicas</h2>
                 <p>Com Dental Office suas dores nossas soluções!</p>
                 <p>Gestão financeira, agenda online, prontuário odontológico e mais em um software odontológico integrado e fácil de usar.</p>
-                <form id="consultaAgendamentos" method="post" action="../Api/teste.php?acao=Consultar">
-                    <label for="nome">Nome</label>
-                    <input type="text" name="name" id="name" placeholder="Nome Completo" required="">
+                <form id="consultaAgendamentos" method="GET" action="http://localhost/Consultav2.php?acao=Consultar">
+                    <label>Nome</label>
+                    <input type="text" name="name" id="name" placeholder="Nome Completo">
                     
-                    <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email" placeholder="E-mail" required="">
+                    <label>E-mail</label>
+                    <input type="email" name="email" id="email" placeholder="E-mail" >
                     
-                    <label for="whatsapp">WhatsApp</label>
+                    <label>WhatsApp</label>
                     <input type="text" name="whatsapp" id="whatsapp" placeholder="Digite seu WhatsApp">
                     <br>
                     <br>
-                    <a href="" class="button" type="submit">Consultar Agendamentos</a>
+                    <button id="consultarButton" class="button" type="button">Consultar Agendamentos</button>
                 </form>
             </main>
             <aside>
@@ -53,7 +54,7 @@
             </aside>
         </div>
         <section>
-
+            <div id="jsonResponse"></div>
         </section>
     </div>
     <footer>
@@ -69,28 +70,63 @@
         </div>
     </footer>
     <script>
-        document.getElementById("consultaAgendamentos").addEventListener("submit", function(event) {
-            event.preventDefault(); // Impede o envio do formulário padrão
-            // Obtém os valores dos campos de registro
-            var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            
-            // Faz uma solicitação AJAX para a API de registro
-            fetch("../Api/teste.php?acao=Inserir", {
-                method: "POST",
-                body: new FormData(document.getElementById("consultaAgendamentos"))
-            }).then(response => response.json()).then(data => {
-                // Manipula os dados retornados pela API
-                console.log(data);
-                if (data.status === "success") {
-                    window.location.href = "../agendamento/index.html"; // Redireciona para a página de consulta
-                } else {
-                    alert(data.message); // Exibe mensagem de erro
-                }
-            }).catch(error => {
-                console.error('Erro ao fazer solicitação:', error);
-            });
+       
+
+        // document.getElementById('consultaAgendamentos').addEventListener('submit', function(event){
+
+                    
+        //     // URL da API
+        //     const url = 'http://localhost/Consultav2.php?acao=Consultar';
+
+        //     // Fazendo uma requisição GET
+        //     fetch(url)
+        //     .then(response => {
+        //         // Verifica se a resposta é bem-sucedida
+        //         if (!response.ok) {
+        //         throw new Error('Error na requisição ' + response.statusText);
+        //         }
+        //         // Converte a resposta para JSON
+        //         return response.json();
+        //     })
+        //     .then(data => {
+        //         // Manipula os dados recebidos
+        //         console.log(data);
+        //     })
+        //     .catch(error => {
+        //         // Trata erros que possam ter ocorrido durante a requisição
+        //         console.log('Erros durante a requisição', error);
+        //     });
+        // })    
+
+        document.getElementById('consultarButton').addEventListener('click', function(event){
+        // Previne o comportamento padrão do botão
+        event.preventDefault();
+        
+        // URL da API
+        const url = 'http://localhost/Consultav2.php?acao=Consultar';
+
+        fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error na requisição ' + response.statusText);
+            }
+            return response.text(); // Captura a resposta como texto
+        })
+        .then(data => {
+            // Manipule os dados recebidos
+            console.log(data);
+            document.getElementById('jsonResponse').innerText = data;
+        })
+        .catch(error => {
+            console.log('Erros durante a requisição', error);
         });
+
+});
+
+        
+
+        
+
     </script>
 </body>
 </html>

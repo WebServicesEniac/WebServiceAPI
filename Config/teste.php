@@ -2,7 +2,7 @@
 $host = 'localhost'; // Altere para o seu endereço IP do servidor de banco de dados, se necessário
 $username = 'root'; // Altere para o seu nome de usuário do banco de dados
 $password = ''; // Altere para sua senha do banco de dados
-$dbname = 'test';
+$dbname = 'smile_time';
 
 // Conexão com o banco de dados usando o MySQLi
 $conn = new mysqli($host, $username, $password, $dbname);
@@ -11,6 +11,6 @@ $conn = new mysqli($host, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Falha na conexão: " . $conn->connect_error);
 } else {
-    echo "Conexão bem-sucedida!";
+    // echo "Conexão bem-sucedida!";
 }
 ?>
