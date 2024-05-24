@@ -68,6 +68,11 @@
             </p>
             <p>Contato: <a href="mailto:suporte@dentaloffice.com">suporte@dentaloffice.com</a></p>
         </div>
+
+        <pre id="content"></pre>
+
+       
+    </table>
     </footer>
     <script>
        
@@ -98,30 +103,28 @@
         //     });
         // })    
 
-        document.getElementById('consultarButton').addEventListener('click', function(event){
-        // Previne o comportamento padrão do botão
-        event.preventDefault();
+        const button = document.getElementById('consultarButton');
+
+        const fetchApi = (value) =>{
+            const result = fetch('http://localhost/Consultav2.php?acao=Consultar')
+            .then((res) =>res.text())
+            .then((data)=>{
+                // console.log(data)
+                const pacientes = data
+                const objeto = pacientes[0]
+                console.log(objeto)
+                
+            })
+        }
+
+        fetchApi(1)
+       
+        button.addEventListener('click', function(event){
+        event.preventDefault()
         
-        // URL da API
-        const url = 'http://localhost/Consultav2.php?acao=Consultar';
+       })
 
-        fetch(url)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Error na requisição ' + response.statusText);
-            }
-            return response.text(); // Captura a resposta como texto
-        })
-        .then(data => {
-            // Manipule os dados recebidos
-            console.log(data);
-            document.getElementById('jsonResponse').innerText = data;
-        })
-        .catch(error => {
-            console.log('Erros durante a requisição', error);
-        });
 
-});
 
         
 
