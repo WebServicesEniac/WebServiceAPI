@@ -69,66 +69,48 @@
             <p>Contato: <a href="mailto:suporte@dentaloffice.com">suporte@dentaloffice.com</a></p>
         </div>
 
-        <pre id="content"></pre>
+        <ul id="resultList"></ul>
 
        
     </table>
     </footer>
-    <script>
-       
-
-        // document.getElementById('consultaAgendamentos').addEventListener('submit', function(event){
-
-                    
-        //     // URL da API
-        //     const url = 'http://localhost/Consultav2.php?acao=Consultar';
-
-        //     // Fazendo uma requisição GET
-        //     fetch(url)
-        //     .then(response => {
-        //         // Verifica se a resposta é bem-sucedida
-        //         if (!response.ok) {
-        //         throw new Error('Error na requisição ' + response.statusText);
-        //         }
-        //         // Converte a resposta para JSON
-        //         return response.json();
-        //     })
-        //     .then(data => {
-        //         // Manipula os dados recebidos
-        //         console.log(data);
-        //     })
-        //     .catch(error => {
-        //         // Trata erros que possam ter ocorrido durante a requisição
-        //         console.log('Erros durante a requisição', error);
-        //     });
-        // })    
+    <script> 
 
         const button = document.getElementById('consultarButton');
+        const resultList = document.getElementById('resultList');
 
         const fetchApi = (value) =>{
             const result = fetch('http://localhost/Consultav2.php?acao=Consultar')
             .then((res) =>res.text())
             .then((data)=>{
                 // console.log(data)
-                const pacientes = data
-                const objeto = pacientes[0]
-                console.log(objeto)
+                const obj = JSON.parse(data);
+                resultList.innerHTML = '';
+                    
+                obj.forEach((element) => {
+                if (Array.isArray(element)) {
+                    element.forEach((innerElement) => {
+                        const listItem = document.createElement('li');
+                        // Acesse as propriedades conforme a estrutura dos seus dados
+                        listItem.textContent = `Nome: ${innerElement.nome_paciente}, CPF: ${innerElement.cpf}`;
+                        resultList.appendChild(listItem); // Adiciona o item à lista de resultados
+                    });
+                } else {
+                    const listItem = document.createElement('li');
+                    // Acesse as propriedades conforme a estrutura dos seus dados
+                    listItem.textContent = `Nome: ${element.nome_paciente}, CPF: ${element.cpf}`;
+                    resultList.appendChild(listItem); // Adiciona o item à lista de resultados
+                }
+            });
+            
                 
             })
+            .catch((error)=>{
+                console.log('errou')
+            })
         }
-
-        fetchApi(1)
        
-        button.addEventListener('click', function(event){
-        event.preventDefault()
-        
-       })
-
-
-
-        
-
-        
+        button.addEventListener('click', ( )=> fetchApi(event));        
 
     </script>
 </body>
