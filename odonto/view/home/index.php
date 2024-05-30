@@ -54,7 +54,21 @@
             </aside>
         </div>
         <section>
-            <div id="jsonResponse"></div>
+            <!-- <div id="jsonResponse"></div> -->
+            <table id="resultList" border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Telefone</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Linhas serão inseridas aqui dinamicamente -->
+        </tbody>
+    </table>
         </section>
     </div>
     <footer>
@@ -78,6 +92,9 @@
 
         const button = document.getElementById('consultarButton');
         const resultList = document.getElementById('resultList');
+        const nome = document.getElementById('name')
+        const email = document.getElementById('email')
+        const whatsapp = document.getElementById('whatsapp')
 
         const fetchApi = (value) =>{
             const result = fetch('http://localhost/Consultav2.php?acao=Consultar')
@@ -85,23 +102,47 @@
             .then((data)=>{
                 // console.log(data)
                 const obj = JSON.parse(data);
-                resultList.innerHTML = '';
-                    
-                obj.forEach((element) => {
-                if (Array.isArray(element)) {
-                    element.forEach((innerElement) => {
-                        const listItem = document.createElement('li');
-                        // Acesse as propriedades conforme a estrutura dos seus dados
-                        listItem.textContent = `Nome: ${innerElement.nome_paciente}, CPF: ${innerElement.cpf}`;
-                        resultList.appendChild(listItem); // Adiciona o item à lista de resultados
-                    });
-                } else {
-                    const listItem = document.createElement('li');
-                    // Acesse as propriedades conforme a estrutura dos seus dados
-                    listItem.textContent = `Nome: ${element.nome_paciente}, CPF: ${element.cpf}`;
-                    resultList.appendChild(listItem); // Adiciona o item à lista de resultados
+                const pacientes = obj[0];
+                console.log(pacientes);
+
+                // Transforme a estrutura
+                const novoFormato = pacientes.reduce((acc, item) => {
+                    acc[item.id] = item;
+                    return acc;
+                }, {});
+
+                // // Converta de volta para JSON (se necessário)
+                // const novoJson = JSON.stringify(novoFormato, null, 4);
+
+                const tbody = resultList.querySelector('tbody');
+                tbody.innerHTML = '';
+
+                for (const id in novoFormato) {
+                    const paciente = novoFormato[id];
+                    const row = document.createElement('tr');
+
+                    const idCell = document.createElement('td');
+                    idCell.textContent = paciente.id;
+                    row.appendChild(idCell);
+
+                    const nomeCell = document.createElement('td');
+                    nomeCell.textContent = paciente.nome_paciente;
+                    row.appendChild(nomeCell);
+
+                    const cpfCell = document.createElement('td');
+                    cpfCell.textContent = paciente.cpf;
+                    row.appendChild(cpfCell);
+
+                    const telefoneCell = document.createElement('td');
+                    telefoneCell.textContent = paciente.telefone;
+                    row.appendChild(telefoneCell);
+
+                    const emailCell = document.createElement('td');
+                    emailCell.textContent = paciente.email;
+                    row.appendChild(emailCell);
+
+                    tbody.appendChild(row);
                 }
-            });
             
                 
             })
@@ -109,8 +150,12 @@
                 console.log('errou')
             })
         }
+    
+        button.addEventListener('click', ( )=> fetchApi(event));      
+        
        
-        button.addEventListener('click', ( )=> fetchApi(event));        
+        
+
 
     </script>
 </body>
