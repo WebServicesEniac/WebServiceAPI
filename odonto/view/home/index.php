@@ -6,6 +6,58 @@
     <title>Odonto</title>
     <link rel="stylesheet" href="../home/index.css">
     <link rel="icon" type="image/png" href="../../assets/img/logo_odonto.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333;
+        }
+        nav ul li {
+            display: inline;
+            padding: 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #111;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+        }
+        table th, table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        table th {
+            background-color: #f2f2f2;
+        }
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        table tr:hover {
+            background-color: #f1f1f1;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
     
 </head>
 <body>
@@ -55,7 +107,7 @@
         </div>
         <section>
             <!-- <div id="jsonResponse"></div> -->
-            <table id="resultList" border="1">
+        <table id="resultList" border="1">
         <thead>
             <tr>
                 <th>ID</th>
