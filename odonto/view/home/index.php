@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../home/index.css">
     <link rel="icon" type="image/png" href="../../assets/img/logo_odonto.png">
     <style>
-        body {
+        /*body {
             font-family: Arial, sans-serif;
         }
         nav ul {
@@ -27,6 +27,7 @@
         nav ul li a:hover {
             background-color: #111;
         }
+        */
         table {
             width: 100%;
             border-collapse: collapse;

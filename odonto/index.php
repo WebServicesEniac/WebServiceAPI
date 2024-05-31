@@ -14,17 +14,17 @@
             <form class="form" id="loginForm" method="post" action="../Api/login.php?acao=Consultar">
                 <label for="chk" aria-hidden="true">Login</label>
                 <input class="input" type="email" name="email" id="loginEmail" placeholder="E-mail" required="">
-                <input class="input" type="password" name="password" id="loginPassword" placeholder="Senha" required="">
+                <input class="input" type="password" name="senha" id="loginPassword" placeholder="Senha" required="">
                 <button type="submit">Login</button>
             </form>
         </div>
         <div class="register">
             <form class="form" id="registerForm" method="post" action="../Api/cadastro.php?acao=Inserir">
                 <label for="chk" aria-hidden="true">Cadastrar</label>
-                <input class="input" type="text" name="name" id="registerName" placeholder="Nome Completo" required="">
+                <input class="input" type="text" name="nome" id="registerName" placeholder="Nome Completo" required="">
                 <input class="input" type="email" name="email" id="registerEmail" placeholder="E-mail" required="">
-                <input class="input" type="password" name="password" id="registerPassword" placeholder="Senha" required="">
-                <input class="input" type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirmar senha" required="">
+                <input class="input" type="password" name="senha" id="registerPassword" placeholder="Senha" required="">
+                <input class="input" type="password" name="confSenha" id="confirmPassword" placeholder="Confirmar senha" required="">
                 <button type="submit">Cadastrar-se</button>
             </form>
         </div>
@@ -32,11 +32,11 @@
 
     <script>
 
-document.getElementById("loginForm").addEventListener("submit", function(event) {
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Impede o envio do formulário padrão
     // Obtém os valores dos campos de registro
     var email = document.getElementById("loginEmail").value;
-    var password = document.getElementById("loginPassword").value;
+    var senha = document.getElementById("loginPassword").value;
     
     // Faz uma solicitação AJAX para a API de registro
     fetch("../Api/cadastro.php?acao=Consultar", {
